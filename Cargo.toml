@@ -1,0 +1,20 @@
+[package]
+name = "speedpost"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+curl-parser = "0.6.0"
+reqwest = { version = "0.12", default-features = true }
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "time", "sync", "fs"] }
+xilem = "0.4.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+async-trait = "0.1"
+anyhow = "1"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
